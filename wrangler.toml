@@ -1,6 +1,6 @@
 name = "ai-test"
-main = "src/index.ts"
 compatibility_date = "2026-09-24"
+main = "./dist/worker/index.js"
 
 [assets]
-directory = "./dist"
+directory = "./public/"
