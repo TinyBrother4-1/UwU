@@ -4,3 +4,6 @@ main = "./dist/worker/index.js"
 
 [assets]
 directory = "./public/"
+
+[ai]
+binding = "AI"
