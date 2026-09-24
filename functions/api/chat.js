@@ -1,9 +1,11 @@
 export async function onRequestPost(context) {
   try {
-    const { messages } = await context.request.json();
+    const { messages, model } = await context.request.json();
 
-    // Updated to a valid, active Qwen model on Cloudflare Workers AI
-    const response = await context.env.AI.run("@cf/qwen/qwen3-30b-a3b-fp8", {
+    // Use the model requested by the frontend, or fall back to a default
+    const selectedModel = model || "@cf/qwen/qwen3-30b-a3b-fp8";
+
+    const response = await context.env.AI.run(selectedModel, {
       messages: messages,
     });
 
