@@ -56,8 +56,8 @@
                 <label for="modelSelect" style="font-size: 0.85rem; color: #94a3b8; margin-right: 8px;">Model:</label>
                 <select id="modelSelect">
                     <option value="@cf/qwen/qwen3-30b-a3b-fp8">Qwen 3 (30B)</option>
-                    <option value="@cf/meta/llama-3.1-70b-instruct">Llama 3.1 (70B)</option>
-                    <option value="@cf/mistral/mistral-7b-instruct-v0.2">Mistral 7B</option>
+                    <option value="@cf/meta/llama-3.1-8b-instruct">Llama 3.1 (8B)</option>
+                    <option value="@cf/mistralai/mistral-small-3.1-24b-instruct">Mistral Small 3.1 (24B)</option>
                 </select>
             </div>
         </header>
@@ -142,7 +142,6 @@
         const chat = chats.find(c => c.id === currentChatId);
         if (!chat) return;
 
-        // If it's the first message, update chat title
         if (chat.title === "New Chat") {
             chat.title = text.length > 25 ? text.substring(0, 25) + "..." : text;
         }
@@ -184,7 +183,6 @@
         if (e.key === 'Enter') sendMessage();
     });
 
-    // Initialize on load
     initApp();
 </script>
 
