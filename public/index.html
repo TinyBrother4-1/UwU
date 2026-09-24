@@ -44,7 +44,6 @@
         const text = input.value.trim();
         if (!text) return;
 
-        // Append user UI bubble
         chatHistory.push({ role: "user", content: text });
         messagesDiv.innerHTML += `<div class="message user">${escapeHtml(text)}</div>`;
         input.value = "";
